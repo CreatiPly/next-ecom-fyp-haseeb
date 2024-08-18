@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+  @apply max-h-full;
+}
+
+@layer components {
+  .input-base {
+    @apply bg-accent text-text border border-opacity-40 border-secondary rounded-sm px-3 py-2 w-full;
+    @apply focus:ring-2 focus:ring-primary focus:border-primary;
+    @apply hover:border-primary transition-colors duration-200;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 p-2 rounded-sm transition-colors duration-200;
+  }
+
+  .nav-link-inactive {
+    @apply nav-link text-text hover:bg-accent hover:text-primary;
+  }
+
+  .nav-link-active {
+    @apply nav-link bg-accent text-primary font-medium;
+  }
+
+  .btn-google {
+    @apply bg-white text-text border-2 border-gray-200 rounded-md py-3 px-4 font-medium shadow-sm;
+    @apply hover:bg-primary hover:text-background transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .max-w-md {
+    max-width: 28rem;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply input-base;
+  }
+
+  h1 {
+    @apply text-text my-2 text-2xl font-bold;
+  }
+
+  label {
+    @apply text-text text-sm font-medium;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-sm shadow-sm transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-background hover:bg-opacity-80;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-text hover:bg-opacity-80;
+  }
+
+  .btn-red {
+    @apply btn bg-red-500 text-background hover:bg-red-600;
+  }
+
+  table.basic {
+    @apply w-full bg-accent rounded-lg shadow-md overflow-hidden;
+  }
+
+  table.basic thead tr td,
+  table.basic thead tr th {
+    @apply text-sm text-text uppercase border-b border-opacity-50 border-secondary p-4 font-semibold;
+  }
+
+  table.basic tr td {
+    @apply p-4 text-text;
+  }
+
+  table.basic tr td span {
+    @apply text-green-500 font-bold;
+  }
+  
+  table.basic a {
+    @apply text-text p-4 py-2 rounded-sm inline-flex items-center mx-1 gap-1 hover:bg-opacity-80 transition-colors duration-200;
+  }
+}
